@@ -82,7 +82,16 @@ terra, sf, RStoolbix, gglpot2, tidyterra, MODIStsp.
 ---
 
 **How will you handle projections, boundaries, or missing data?**  
-  
+Projections:
+Choose an appropriate projected coordinate system for Hawaii, as global systems may distort the area and distances of the islands.
+Reproject all data layers, such as satellite imagery (like Landsat) and GIS data (like land boundaries), to a single, consistent coordinate system before analysis. 
+Boundries:
+Use a polygon of the Hawaiian islands to clip the NDVI raster data. This process removes data from the ocean, ensuring that calculations only include terrestrial vegetation.
+For a study focused on a specific part of an island, like a national park or forest reserve, use a feature layer for that specific AOI to extract or clip the NDVI data. This creates a smaller, more manageable dataset.
+To compare NDVI values across different management zones or land cover types, use a zonal statistics tool. This approach summarizes NDVI values within defined boundaries like land use districts or ROD-affected areas.
+Missing Data:
+Using the value from the previous observation (Last Observation Carried Forward, or LOCF) or interpolating between the dates before and after the gap.
+Using machine learning algorithms, like a hybrid of multiple imputation and K-nearest neighbors, which has shown good performance in filling missing MODIS NDVI data in Hawaii. 
 
 ---
 
@@ -123,7 +132,7 @@ hotspot time series, color gradient for NDVI health.
 ---
 
 **Will you compare locations, beofre and after events, look at seasonal patterns, or study long-term trends?**  
-Before ad after events
+Before and after events.
 
 ---
 
@@ -146,7 +155,9 @@ ROD and NDVI: Expect a negative correlation, ROD leads to lower NDVI values, sig
 ---
 
 **What uncertainties or data limitations should you acknowledge?**  
-*Write your thoughts here:*  
+Cloud cover and atmospheric effects
+NDVI sensor and interpretation limitations
+Geographic and ecological data limitations
 
 ---
 
@@ -154,7 +165,7 @@ ROD and NDVI: Expect a negative correlation, ROD leads to lower NDVI values, sig
 
 
 **Could your results inform decisions, policies, or further research?**  
-*Write your thoughts here:*  
+Further research by identifying potential hotspots, prioritizing field validation, improving early detection methods, and developing more accurate monitoring tools.  
 
 ---
 
